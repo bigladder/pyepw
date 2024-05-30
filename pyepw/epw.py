@@ -5086,8 +5086,8 @@ class Comments2(object):
 class DataPeriod(object):
 
     """Corresponds to EPW IDD object `DATA PERIOD`"""
-    _internal_name = "DATA PERIOD"
-    field_count = 5
+    _internal_name = "DATA PERIODS"
+    field_count = 6
 
     def __init__(self):
         """Init data dictionary object for EPW IDD  `DATA PERIOD`"""
