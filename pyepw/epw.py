@@ -5091,6 +5091,7 @@ class DataPeriod(object):
 
     def __init__(self):
         """Init data dictionary object for EPW IDD  `DATA PERIOD`"""
+        self._number_of_data_periods = None
         self._number_of_records_per_hour = None
         self._data_period_name_or_description = None
         self._data_period_start_day_of_week = None
@@ -5105,6 +5106,11 @@ class DataPeriod(object):
 
         """
         i = 0
+        if len(vals[i]) == 0:
+            self.number_of_data_periods = None
+        else:
+            self.number_of_data_periods = vals[i]
+        i += 1
         if len(vals[i]) == 0:
             self.number_of_records_per_hour = None
         else:
@@ -5130,6 +5136,40 @@ class DataPeriod(object):
         else:
             self.data_period_end_day = vals[i]
         i += 1
+
+    @property
+    def number_of_data_periods(self):
+        """Get number_of_data_periods.
+
+        Returns:
+            int: the value of `number_of_data_periods` or None if not set
+
+        """
+        return self._number_of_data_periods
+
+    @number_of_data_periods.setter
+    def number_of_data_periods(self, value=None):
+        """Corresponds to IDD Field `number_of_data_periods`
+
+        Args:
+            value (int): value for IDD Field `number_of_data_periods`
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = int(value)
+            except ValueError:
+                raise ValueError(
+                    "value {} need to be of type int "
+                    "for field `number_of_data_periods`".format(value)
+                )
+
+        self._number_of_data_periods = value
 
     @property
     def number_of_records_per_hour(self):
@@ -5357,6 +5397,7 @@ class DataPeriod(object):
         out = []
         if top:
             out.append(self._internal_name)
+        out.append(self._to_str(self.number_of_data_periods))
         out.append(self._to_str(self.number_of_records_per_hour))
         out.append(self._to_str(self.data_period_name_or_description))
         out.append(self._to_str(self.data_period_start_day_of_week))
