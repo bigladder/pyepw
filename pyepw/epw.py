@@ -15,8 +15,8 @@ import re
 
 
 class Location(object):
-
     """Corresponds to EPW IDD object `LOCATION`"""
+
     _internal_name = "LOCATION"
     field_count = 9
 
@@ -113,11 +113,11 @@ class Location(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `city`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `city`')
+                raise ValueError(
+                    "value {} need to be of type str " "for field `city`".format(value)
+                )
+            if "," in value:
+                raise ValueError("value should not contain a comma " "for field `city`")
 
         self._city = value
 
@@ -149,11 +149,14 @@ class Location(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `state_province_region`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `state_province_region`')
+                    "value {} need to be of type str "
+                    "for field `state_province_region`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `state_province_region`"
+                )
 
         self._state_province_region = value
 
@@ -184,11 +187,14 @@ class Location(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `country`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `country`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `country`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `country`"
+                )
 
         self._country = value
 
@@ -219,11 +225,14 @@ class Location(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `source`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `source`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `source`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `source`"
+                )
 
         self._source = value
 
@@ -255,11 +264,11 @@ class Location(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `wmo`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `wmo`')
+                raise ValueError(
+                    "value {} need to be of type str " "for field `wmo`".format(value)
+                )
+            if "," in value:
+                raise ValueError("value should not contain a comma " "for field `wmo`")
 
         self._wmo = value
 
@@ -296,14 +305,18 @@ class Location(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `latitude`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `latitude`".format(value)
+                )
             if value < -90.0:
-                raise ValueError('value need to be greater or equal -90.0 '
-                                 'for field `latitude`')
+                raise ValueError(
+                    "value need to be greater or equal -90.0 " "for field `latitude`"
+                )
             if value > 90.0:
-                raise ValueError('value need to be smaller 90.0 '
-                                 'for field `latitude`')
+                raise ValueError(
+                    "value need to be smaller 90.0 " "for field `latitude`"
+                )
 
         self._latitude = value
 
@@ -340,14 +353,18 @@ class Location(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `longitude`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `longitude`".format(value)
+                )
             if value < -180.0:
-                raise ValueError('value need to be greater or equal -180.0 '
-                                 'for field `longitude`')
+                raise ValueError(
+                    "value need to be greater or equal -180.0 " "for field `longitude`"
+                )
             if value > 180.0:
-                raise ValueError('value need to be smaller 180.0 '
-                                 'for field `longitude`')
+                raise ValueError(
+                    "value need to be smaller 180.0 " "for field `longitude`"
+                )
 
         self._longitude = value
 
@@ -382,14 +399,18 @@ class Location(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `timezone`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `timezone`".format(value)
+                )
             if value < -12.0:
-                raise ValueError('value need to be greater or equal -12.0 '
-                                 'for field `timezone`')
+                raise ValueError(
+                    "value need to be greater or equal -12.0 " "for field `timezone`"
+                )
             if value > 12.0:
-                raise ValueError('value need to be smaller 12.0 '
-                                 'for field `timezone`')
+                raise ValueError(
+                    "value need to be smaller 12.0 " "for field `timezone`"
+                )
 
         self._timezone = value
 
@@ -424,14 +445,18 @@ class Location(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `elevation`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `elevation`".format(value)
+                )
             if value < -1000.0:
-                raise ValueError('value need to be greater or equal -1000.0 '
-                                 'for field `elevation`')
+                raise ValueError(
+                    "value need to be greater or equal -1000.0 " "for field `elevation`"
+                )
             if value >= 9999.9:
-                raise ValueError('value need to be smaller 9999.9 '
-                                 'for field `elevation`')
+                raise ValueError(
+                    "value need to be smaller 9999.9 " "for field `elevation`"
+                )
 
         self._elevation = value
 
@@ -444,7 +469,7 @@ class Location(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -480,8 +505,8 @@ class Location(object):
 
 
 class DesignCondition(object):
-
     """Corresponds to EPW IDD object `DESIGN CONDITION`"""
+
     _internal_name = "DESIGN CONDITION"
     field_count = 68
 
@@ -933,11 +958,14 @@ class DesignCondition(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `title_of_design_condition`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `title_of_design_condition`')
+                    "value {} need to be of type str "
+                    "for field `title_of_design_condition`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `title_of_design_condition`"
+                )
 
         self._title_of_design_condition = value
 
@@ -968,11 +996,14 @@ class DesignCondition(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `unkown_field`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `unkown_field`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `unkown_field`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `unkown_field`"
+                )
 
         self._unkown_field = value
 
@@ -1007,16 +1038,21 @@ class DesignCondition(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `design_stat_heating`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `design_stat_heating`')
+                    "value {} need to be of type str "
+                    "for field `design_stat_heating`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `design_stat_heating`"
+                )
             vals = set()
             vals.add("Heating")
             if value not in vals:
-                raise ValueError('value {} is not an accepted value for '
-                                 'field `design_stat_heating`'.format(value))
+                raise ValueError(
+                    "value {} is not an accepted value for "
+                    "field `design_stat_heating`".format(value)
+                )
 
         self._design_stat_heating = value
 
@@ -1049,14 +1085,18 @@ class DesignCondition(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `coldestmonth`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int "
+                    "for field `coldestmonth`".format(value)
+                )
             if value < 1:
-                raise ValueError('value need to be greater or equal 1 '
-                                 'for field `coldestmonth`')
+                raise ValueError(
+                    "value need to be greater or equal 1 " "for field `coldestmonth`"
+                )
             if value > 12:
-                raise ValueError('value need to be smaller 12 '
-                                 'for field `coldestmonth`')
+                raise ValueError(
+                    "value need to be smaller 12 " "for field `coldestmonth`"
+                )
 
         self._coldestmonth = value
 
@@ -1072,7 +1112,7 @@ class DesignCondition(object):
 
     @db996.setter
     def db996(self, value=None):
-        """  Corresponds to IDD Field `db996`
+        """Corresponds to IDD Field `db996`
         Dry-bulb temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
 
@@ -1089,8 +1129,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db996`".format(value)
+                )
 
         self._db996 = value
 
@@ -1106,7 +1148,7 @@ class DesignCondition(object):
 
     @db990.setter
     def db990(self, value=None):
-        """  Corresponds to IDD Field `db990`
+        """Corresponds to IDD Field `db990`
         Dry-bulb temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
 
@@ -1123,8 +1165,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db990`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db990`".format(value)
+                )
 
         self._db990 = value
 
@@ -1140,7 +1184,7 @@ class DesignCondition(object):
 
     @dp996.setter
     def dp996(self, value=None):
-        """  Corresponds to IDD Field `dp996`
+        """Corresponds to IDD Field `dp996`
         Dew-point temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
 
@@ -1157,8 +1201,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dp996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dp996`".format(value)
+                )
 
         self._dp996 = value
 
@@ -1174,7 +1220,7 @@ class DesignCondition(object):
 
     @hr_dp996.setter
     def hr_dp996(self, value=None):
-        """  Corresponds to IDD Field `hr_dp996`
+        """Corresponds to IDD Field `hr_dp996`
         humidity ratio, calculated at standard atmospheric pressure
         at elevation of station, corresponding to
         Dew-point temperature corresponding to 99.6% annual cumulative
@@ -1192,8 +1238,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `hr_dp996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `hr_dp996`".format(value)
+                )
 
         self._hr_dp996 = value
 
@@ -1209,7 +1257,7 @@ class DesignCondition(object):
 
     @db_dp996.setter
     def db_dp996(self, value=None):
-        """  Corresponds to IDD Field `db_dp996`
+        """Corresponds to IDD Field `db_dp996`
         mean coincident drybulb temperature corresponding to
         Dew-point temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
@@ -1227,8 +1275,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_dp996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_dp996`".format(value)
+                )
 
         self._db_dp996 = value
 
@@ -1244,7 +1294,7 @@ class DesignCondition(object):
 
     @dp990.setter
     def dp990(self, value=None):
-        """  Corresponds to IDD Field `dp990`
+        """Corresponds to IDD Field `dp990`
         Dew-point temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
 
@@ -1261,8 +1311,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dp990`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dp990`".format(value)
+                )
 
         self._dp990 = value
 
@@ -1278,7 +1330,7 @@ class DesignCondition(object):
 
     @hr_dp990.setter
     def hr_dp990(self, value=None):
-        """  Corresponds to IDD Field `hr_dp990`
+        """Corresponds to IDD Field `hr_dp990`
         humidity ratio, calculated at standard atmospheric pressure
         at elevation of station, corresponding to
         Dew-point temperature corresponding to 90.0% annual cumulative
@@ -1296,8 +1348,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `hr_dp990`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `hr_dp990`".format(value)
+                )
 
         self._hr_dp990 = value
 
@@ -1313,7 +1367,7 @@ class DesignCondition(object):
 
     @db_dp990.setter
     def db_dp990(self, value=None):
-        """  Corresponds to IDD Field `db_dp990`
+        """Corresponds to IDD Field `db_dp990`
         mean coincident drybulb temperature corresponding to
         Dew-point temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
@@ -1331,8 +1385,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_dp990`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_dp990`".format(value)
+                )
 
         self._db_dp990 = value
 
@@ -1364,8 +1420,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws004c`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws004c`".format(value)
+                )
 
         self._ws004c = value
 
@@ -1381,7 +1439,7 @@ class DesignCondition(object):
 
     @db_ws004c.setter
     def db_ws004c(self, value=None):
-        """  Corresponds to IDD Field `db_ws004c`
+        """Corresponds to IDD Field `db_ws004c`
         Mean coincident dry-bulb temperature to wind speed corresponding to 0.40% cumulative frequency for coldest month
 
         Args:
@@ -1397,8 +1455,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_ws004c`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_ws004c`".format(value)
+                )
 
         self._db_ws004c = value
 
@@ -1414,7 +1474,7 @@ class DesignCondition(object):
 
     @ws010c.setter
     def ws010c(self, value=None):
-        """  Corresponds to IDD Field `ws010c`
+        """Corresponds to IDD Field `ws010c`
         Wind speed corresponding to 1.0% cumulative frequency
         of occurrence for coldest month;
 
@@ -1431,8 +1491,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws010c`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws010c`".format(value)
+                )
 
         self._ws010c = value
 
@@ -1448,7 +1510,7 @@ class DesignCondition(object):
 
     @db_ws010c.setter
     def db_ws010c(self, value=None):
-        """  Corresponds to IDD Field `db_ws010c`
+        """Corresponds to IDD Field `db_ws010c`
         Mean coincident dry-bulb temperature to wind speed corresponding to 1.0% cumulative frequency for coldest month
 
         Args:
@@ -1464,8 +1526,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_ws010c`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_ws010c`".format(value)
+                )
 
         self._db_ws010c = value
 
@@ -1481,7 +1545,7 @@ class DesignCondition(object):
 
     @ws_db996.setter
     def ws_db996(self, value=None):
-        """  Corresponds to IDD Field `ws_db996`
+        """Corresponds to IDD Field `ws_db996`
         Mean wind speed coincident with 99.6% dry-bulb temperature
 
         Args:
@@ -1497,8 +1561,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws_db996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws_db996`".format(value)
+                )
 
         self._ws_db996 = value
 
@@ -1514,7 +1580,7 @@ class DesignCondition(object):
 
     @wd_db996.setter
     def wd_db996(self, value=None):
-        """  Corresponds to IDD Field `wd_db996`
+        """Corresponds to IDD Field `wd_db996`
         most frequent wind direction corresponding to mean wind speed coincident with 99.6% dry-bulb temperature
         degrees from north (east = 90 deg)
 
@@ -1531,8 +1597,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wd_db996`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wd_db996`".format(value)
+                )
 
         self._wd_db996 = value
 
@@ -1567,16 +1635,21 @@ class DesignCondition(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `design_stat_cooling`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `design_stat_cooling`')
+                    "value {} need to be of type str "
+                    "for field `design_stat_cooling`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `design_stat_cooling`"
+                )
             vals = set()
             vals.add("Cooling")
             if value not in vals:
-                raise ValueError('value {} is not an accepted value for '
-                                 'field `design_stat_cooling`'.format(value))
+                raise ValueError(
+                    "value {} is not an accepted value for "
+                    "field `design_stat_cooling`".format(value)
+                )
 
         self._design_stat_cooling = value
 
@@ -1609,14 +1682,18 @@ class DesignCondition(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `hottestmonth`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int "
+                    "for field `hottestmonth`".format(value)
+                )
             if value < 1:
-                raise ValueError('value need to be greater or equal 1 '
-                                 'for field `hottestmonth`')
+                raise ValueError(
+                    "value need to be greater or equal 1 " "for field `hottestmonth`"
+                )
             if value > 12:
-                raise ValueError('value need to be smaller 12 '
-                                 'for field `hottestmonth`')
+                raise ValueError(
+                    "value need to be smaller 12 " "for field `hottestmonth`"
+                )
 
         self._hottestmonth = value
 
@@ -1652,8 +1729,9 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbr`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float " "for field `dbr`".format(value)
+                )
 
         self._dbr = value
 
@@ -1669,7 +1747,7 @@ class DesignCondition(object):
 
     @db004.setter
     def db004(self, value=None):
-        """  Corresponds to IDD Field `db004`
+        """Corresponds to IDD Field `db004`
         Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
 
         Args:
@@ -1685,8 +1763,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db004`".format(value)
+                )
 
         self._db004 = value
 
@@ -1702,7 +1782,7 @@ class DesignCondition(object):
 
     @wb_db004.setter
     def wb_db004(self, value=None):
-        """  Corresponds to IDD Field `wb_db004`
+        """Corresponds to IDD Field `wb_db004`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
 
@@ -1719,8 +1799,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb_db004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb_db004`".format(value)
+                )
 
         self._wb_db004 = value
 
@@ -1736,7 +1818,7 @@ class DesignCondition(object):
 
     @db010.setter
     def db010(self, value=None):
-        """  Corresponds to IDD Field `db010`
+        """Corresponds to IDD Field `db010`
         Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
 
         Args:
@@ -1752,8 +1834,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db010`".format(value)
+                )
 
         self._db010 = value
 
@@ -1769,7 +1853,7 @@ class DesignCondition(object):
 
     @wb_db010.setter
     def wb_db010(self, value=None):
-        """  Corresponds to IDD Field `wb_db010`
+        """Corresponds to IDD Field `wb_db010`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
 
@@ -1786,8 +1870,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb_db010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb_db010`".format(value)
+                )
 
         self._wb_db010 = value
 
@@ -1803,7 +1889,7 @@ class DesignCondition(object):
 
     @db020.setter
     def db020(self, value=None):
-        """  Corresponds to IDD Field `db020`
+        """Corresponds to IDD Field `db020`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
 
@@ -1820,8 +1906,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db020`".format(value)
+                )
 
         self._db020 = value
 
@@ -1837,7 +1925,7 @@ class DesignCondition(object):
 
     @wb_db020.setter
     def wb_db020(self, value=None):
-        """  Corresponds to IDD Field `wb_db020`
+        """Corresponds to IDD Field `wb_db020`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
 
@@ -1854,8 +1942,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb_db020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb_db020`".format(value)
+                )
 
         self._wb_db020 = value
 
@@ -1871,7 +1961,7 @@ class DesignCondition(object):
 
     @wb004.setter
     def wb004(self, value=None):
-        """  Corresponds to IDD Field `wb004`
+        """Corresponds to IDD Field `wb004`
         Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
 
         Args:
@@ -1887,8 +1977,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb004`".format(value)
+                )
 
         self._wb004 = value
 
@@ -1904,7 +1996,7 @@ class DesignCondition(object):
 
     @db_wb004.setter
     def db_wb004(self, value=None):
-        """  Corresponds to IDD Field `db_wb004`
+        """Corresponds to IDD Field `db_wb004`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
 
@@ -1921,8 +2013,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_wb004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_wb004`".format(value)
+                )
 
         self._db_wb004 = value
 
@@ -1938,7 +2032,7 @@ class DesignCondition(object):
 
     @wb010.setter
     def wb010(self, value=None):
-        """  Corresponds to IDD Field `wb010`
+        """Corresponds to IDD Field `wb010`
         Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
 
         Args:
@@ -1954,8 +2048,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb010`".format(value)
+                )
 
         self._wb010 = value
 
@@ -1971,7 +2067,7 @@ class DesignCondition(object):
 
     @db_wb010.setter
     def db_wb010(self, value=None):
-        """  Corresponds to IDD Field `db_wb010`
+        """Corresponds to IDD Field `db_wb010`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
 
@@ -1988,8 +2084,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_wb010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_wb010`".format(value)
+                )
 
         self._db_wb010 = value
 
@@ -2005,7 +2103,7 @@ class DesignCondition(object):
 
     @wb020.setter
     def wb020(self, value=None):
-        """  Corresponds to IDD Field `wb020`
+        """Corresponds to IDD Field `wb020`
         Wet-bulb temperature corresponding to 02.0% annual cumulative frequency of occurrence
 
         Args:
@@ -2021,8 +2119,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wb020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wb020`".format(value)
+                )
 
         self._wb020 = value
 
@@ -2038,7 +2138,7 @@ class DesignCondition(object):
 
     @db_wb020.setter
     def db_wb020(self, value=None):
-        """  Corresponds to IDD Field `db_wb020`
+        """Corresponds to IDD Field `db_wb020`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence
 
@@ -2055,8 +2155,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_wb020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_wb020`".format(value)
+                )
 
         self._db_wb020 = value
 
@@ -2072,7 +2174,7 @@ class DesignCondition(object):
 
     @ws_db004.setter
     def ws_db004(self, value=None):
-        """  Corresponds to IDD Field `ws_db004`
+        """Corresponds to IDD Field `ws_db004`
         Mean wind speed coincident with 0.4% dry-bulb temperature
 
         Args:
@@ -2088,8 +2190,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws_db004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws_db004`".format(value)
+                )
 
         self._ws_db004 = value
 
@@ -2105,7 +2209,7 @@ class DesignCondition(object):
 
     @wd_db004.setter
     def wd_db004(self, value=None):
-        """  Corresponds to IDD Field `wd_db004`
+        """Corresponds to IDD Field `wd_db004`
         corresponding most frequent wind direction
         Mean wind speed coincident with 0.4% dry-bulb temperature
         degrees true from north (east = 90 deg)
@@ -2123,8 +2227,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wd_db004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wd_db004`".format(value)
+                )
 
         self._wd_db004 = value
 
@@ -2140,7 +2246,7 @@ class DesignCondition(object):
 
     @dp004.setter
     def dp004(self, value=None):
-        """  Corresponds to IDD Field `dp004`
+        """Corresponds to IDD Field `dp004`
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
 
         Args:
@@ -2156,8 +2262,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dp004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dp004`".format(value)
+                )
 
         self._dp004 = value
 
@@ -2173,7 +2281,7 @@ class DesignCondition(object):
 
     @hr_dp004.setter
     def hr_dp004(self, value=None):
-        """  Corresponds to IDD Field `hr_dp004`
+        """Corresponds to IDD Field `hr_dp004`
         humidity ratio corresponding to
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
 
@@ -2189,8 +2297,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `hr_dp004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `hr_dp004`".format(value)
+                )
 
         self._hr_dp004 = value
 
@@ -2206,7 +2316,7 @@ class DesignCondition(object):
 
     @db_dp004.setter
     def db_dp004(self, value=None):
-        """  Corresponds to IDD Field `db_dp004`
+        """Corresponds to IDD Field `db_dp004`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
 
@@ -2223,8 +2333,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_dp004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_dp004`".format(value)
+                )
 
         self._db_dp004 = value
 
@@ -2240,7 +2352,7 @@ class DesignCondition(object):
 
     @dp010.setter
     def dp010(self, value=None):
-        """  Corresponds to IDD Field `dp010`
+        """Corresponds to IDD Field `dp010`
         Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
 
         Args:
@@ -2256,8 +2368,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dp010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dp010`".format(value)
+                )
 
         self._dp010 = value
 
@@ -2273,7 +2387,7 @@ class DesignCondition(object):
 
     @hr_dp010.setter
     def hr_dp010(self, value=None):
-        """  Corresponds to IDD Field `hr_dp010`
+        """Corresponds to IDD Field `hr_dp010`
         humidity ratio corresponding to
         Dew-point temperature corresponding to 1.0,% annual cumulative frequency of occurrence
         calculated at the standard atmospheric pressure at elevation of station
@@ -2290,8 +2404,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `hr_dp010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `hr_dp010`".format(value)
+                )
 
         self._hr_dp010 = value
 
@@ -2307,7 +2423,7 @@ class DesignCondition(object):
 
     @db_dp010.setter
     def db_dp010(self, value=None):
-        """  Corresponds to IDD Field `db_dp010`
+        """Corresponds to IDD Field `db_dp010`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
 
@@ -2324,8 +2440,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_dp010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_dp010`".format(value)
+                )
 
         self._db_dp010 = value
 
@@ -2341,7 +2459,7 @@ class DesignCondition(object):
 
     @dp020.setter
     def dp020(self, value=None):
-        """  Corresponds to IDD Field `dp020`
+        """Corresponds to IDD Field `dp020`
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
 
         Args:
@@ -2357,8 +2475,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dp020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dp020`".format(value)
+                )
 
         self._dp020 = value
 
@@ -2374,7 +2494,7 @@ class DesignCondition(object):
 
     @hr_dp020.setter
     def hr_dp020(self, value=None):
-        """  Corresponds to IDD Field `hr_dp020`
+        """Corresponds to IDD Field `hr_dp020`
         humidity ratio corresponding to
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
         calculated at the standard atmospheric pressure at elevation of station
@@ -2391,8 +2511,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `hr_dp020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `hr_dp020`".format(value)
+                )
 
         self._hr_dp020 = value
 
@@ -2408,7 +2530,7 @@ class DesignCondition(object):
 
     @db_dp020.setter
     def db_dp020(self, value=None):
-        """  Corresponds to IDD Field `db_dp020`
+        """Corresponds to IDD Field `db_dp020`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
 
@@ -2425,8 +2547,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_dp020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_dp020`".format(value)
+                )
 
         self._db_dp020 = value
 
@@ -2442,7 +2566,7 @@ class DesignCondition(object):
 
     @en004.setter
     def en004(self, value=None):
-        """  Corresponds to IDD Field `en004`
+        """Corresponds to IDD Field `en004`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
 
@@ -2459,8 +2583,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `en004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `en004`".format(value)
+                )
 
         self._en004 = value
 
@@ -2476,7 +2602,7 @@ class DesignCondition(object):
 
     @db_en004.setter
     def db_en004(self, value=None):
-        """  Corresponds to IDD Field `db_en004`
+        """Corresponds to IDD Field `db_en004`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
 
@@ -2493,8 +2619,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_en004`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_en004`".format(value)
+                )
 
         self._db_en004 = value
 
@@ -2510,7 +2638,7 @@ class DesignCondition(object):
 
     @en010.setter
     def en010(self, value=None):
-        """  Corresponds to IDD Field `en010`
+        """Corresponds to IDD Field `en010`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
 
@@ -2527,8 +2655,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `en010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `en010`".format(value)
+                )
 
         self._en010 = value
 
@@ -2544,7 +2674,7 @@ class DesignCondition(object):
 
     @db_en010.setter
     def db_en010(self, value=None):
-        """  Corresponds to IDD Field `db_en010`
+        """Corresponds to IDD Field `db_en010`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
 
@@ -2561,8 +2691,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_en010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_en010`".format(value)
+                )
 
         self._db_en010 = value
 
@@ -2578,7 +2710,7 @@ class DesignCondition(object):
 
     @en020.setter
     def en020(self, value=None):
-        """  Corresponds to IDD Field `en020`
+        """Corresponds to IDD Field `en020`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
 
@@ -2595,8 +2727,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `en020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `en020`".format(value)
+                )
 
         self._en020 = value
 
@@ -2612,7 +2746,7 @@ class DesignCondition(object):
 
     @db_en020.setter
     def db_en020(self, value=None):
-        """  Corresponds to IDD Field `db_en020`
+        """Corresponds to IDD Field `db_en020`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
 
@@ -2629,8 +2763,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `db_en020`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `db_en020`".format(value)
+                )
 
         self._db_en020 = value
 
@@ -2646,7 +2782,7 @@ class DesignCondition(object):
 
     @hrs_84_and_db12_8_or_20_6.setter
     def hrs_84_and_db12_8_or_20_6(self, value=None):
-        """  Corresponds to IDD Field `hrs_84_and_db12_8_or_20_6`
+        """Corresponds to IDD Field `hrs_84_and_db12_8_or_20_6`
         Number of hours between 8 AM and 4 PM (inclusive) with dry-bulb temperature between 12.8 and 20.6 C
 
         Args:
@@ -2662,8 +2798,9 @@ class DesignCondition(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `hrs_84_and_db12_8_or_20_6`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `hrs_84_and_db12_8_or_20_6`".format(value)
+                )
 
         self._hrs_84_and_db12_8_or_20_6 = value
 
@@ -2698,16 +2835,21 @@ class DesignCondition(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `design_stat_extremes`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `design_stat_extremes`')
+                    "value {} need to be of type str "
+                    "for field `design_stat_extremes`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `design_stat_extremes`"
+                )
             vals = set()
             vals.add("Extremes")
             if value not in vals:
-                raise ValueError('value {} is not an accepted value for '
-                                 'field `design_stat_extremes`'.format(value))
+                raise ValueError(
+                    "value {} is not an accepted value for "
+                    "field `design_stat_extremes`".format(value)
+                )
 
         self._design_stat_extremes = value
 
@@ -2723,7 +2865,7 @@ class DesignCondition(object):
 
     @ws010.setter
     def ws010(self, value=None):
-        """  Corresponds to IDD Field `ws010`
+        """Corresponds to IDD Field `ws010`
         Wind speed corresponding to 1.0% annual cumulative frequency of occurrence
 
         Args:
@@ -2739,8 +2881,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws010`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws010`".format(value)
+                )
 
         self._ws010 = value
 
@@ -2756,7 +2900,7 @@ class DesignCondition(object):
 
     @ws025.setter
     def ws025(self, value=None):
-        """  Corresponds to IDD Field `ws025`
+        """Corresponds to IDD Field `ws025`
         Wind speed corresponding to 2.5% annual cumulative frequency of occurrence
 
         Args:
@@ -2772,8 +2916,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws025`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws025`".format(value)
+                )
 
         self._ws025 = value
 
@@ -2789,7 +2935,7 @@ class DesignCondition(object):
 
     @ws050.setter
     def ws050(self, value=None):
-        """  Corresponds to IDD Field `ws050`
+        """Corresponds to IDD Field `ws050`
         Wind speed corresponding 5.0% annual cumulative frequency of occurrence
 
         Args:
@@ -2805,8 +2951,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ws050`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ws050`".format(value)
+                )
 
         self._ws050 = value
 
@@ -2822,7 +2970,7 @@ class DesignCondition(object):
 
     @wbmax.setter
     def wbmax(self, value=None):
-        """  Corresponds to IDD Field `wbmax`
+        """Corresponds to IDD Field `wbmax`
         Extreme maximum wet-bulb temperature
 
         Args:
@@ -2838,8 +2986,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wbmax`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wbmax`".format(value)
+                )
 
         self._wbmax = value
 
@@ -2855,7 +3005,7 @@ class DesignCondition(object):
 
     @dbmin_mean.setter
     def dbmin_mean(self, value=None):
-        """  Corresponds to IDD Field `dbmin_mean`
+        """Corresponds to IDD Field `dbmin_mean`
         Mean of extreme annual minimum dry-bulb temperature
 
         Args:
@@ -2871,8 +3021,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin_mean`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin_mean`".format(value)
+                )
 
         self._dbmin_mean = value
 
@@ -2888,7 +3040,7 @@ class DesignCondition(object):
 
     @dbmax_mean.setter
     def dbmax_mean(self, value=None):
-        """  Corresponds to IDD Field `dbmax_mean`
+        """Corresponds to IDD Field `dbmax_mean`
         Mean of extreme annual maximum dry-bulb temperature
 
         Args:
@@ -2904,8 +3056,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax_mean`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax_mean`".format(value)
+                )
 
         self._dbmax_mean = value
 
@@ -2921,7 +3075,7 @@ class DesignCondition(object):
 
     @dbmin_stddev.setter
     def dbmin_stddev(self, value=None):
-        """  Corresponds to IDD Field `dbmin_stddev`
+        """Corresponds to IDD Field `dbmin_stddev`
         Standard deviation of extreme annual minimum dry-bulb temperature
 
         Args:
@@ -2937,8 +3091,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin_stddev`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin_stddev`".format(value)
+                )
 
         self._dbmin_stddev = value
 
@@ -2954,7 +3110,7 @@ class DesignCondition(object):
 
     @dbmax_stddev.setter
     def dbmax_stddev(self, value=None):
-        """  Corresponds to IDD Field `dbmax_stddev`
+        """Corresponds to IDD Field `dbmax_stddev`
         Standard deviation of extreme annual maximum dry-bulb temperature
 
         Args:
@@ -2970,8 +3126,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax_stddev`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax_stddev`".format(value)
+                )
 
         self._dbmax_stddev = value
 
@@ -2987,7 +3145,7 @@ class DesignCondition(object):
 
     @dbmin05years.setter
     def dbmin05years(self, value=None):
-        """  Corresponds to IDD Field `dbmin05years`
+        """Corresponds to IDD Field `dbmin05years`
         5-year return period values for minimum extreme dry-bulb temperature
 
         Args:
@@ -3003,8 +3161,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin05years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin05years`".format(value)
+                )
 
         self._dbmin05years = value
 
@@ -3020,7 +3180,7 @@ class DesignCondition(object):
 
     @dbmax05years.setter
     def dbmax05years(self, value=None):
-        """  Corresponds to IDD Field `dbmax05years`
+        """Corresponds to IDD Field `dbmax05years`
         5-year return period values for maximum extreme dry-bulb temperature
 
         Args:
@@ -3036,8 +3196,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax05years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax05years`".format(value)
+                )
 
         self._dbmax05years = value
 
@@ -3053,7 +3215,7 @@ class DesignCondition(object):
 
     @dbmin10years.setter
     def dbmin10years(self, value=None):
-        """  Corresponds to IDD Field `dbmin10years`
+        """Corresponds to IDD Field `dbmin10years`
         10-year return period values for minimum extreme dry-bulb temperature
 
         Args:
@@ -3069,8 +3231,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin10years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin10years`".format(value)
+                )
 
         self._dbmin10years = value
 
@@ -3086,7 +3250,7 @@ class DesignCondition(object):
 
     @dbmax10years.setter
     def dbmax10years(self, value=None):
-        """  Corresponds to IDD Field `dbmax10years`
+        """Corresponds to IDD Field `dbmax10years`
         10-year return period values for maximum extreme dry-bulb temperature
 
         Args:
@@ -3102,8 +3266,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax10years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax10years`".format(value)
+                )
 
         self._dbmax10years = value
 
@@ -3119,7 +3285,7 @@ class DesignCondition(object):
 
     @dbmin20years.setter
     def dbmin20years(self, value=None):
-        """  Corresponds to IDD Field `dbmin20years`
+        """Corresponds to IDD Field `dbmin20years`
         20-year return period values for minimum extreme dry-bulb temperature
 
         Args:
@@ -3135,8 +3301,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin20years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin20years`".format(value)
+                )
 
         self._dbmin20years = value
 
@@ -3152,7 +3320,7 @@ class DesignCondition(object):
 
     @dbmax20years.setter
     def dbmax20years(self, value=None):
-        """  Corresponds to IDD Field `dbmax20years`
+        """Corresponds to IDD Field `dbmax20years`
         20-year return period values for maximum extreme dry-bulb temperature
 
         Args:
@@ -3168,8 +3336,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax20years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax20years`".format(value)
+                )
 
         self._dbmax20years = value
 
@@ -3185,7 +3355,7 @@ class DesignCondition(object):
 
     @dbmin50years.setter
     def dbmin50years(self, value=None):
-        """  Corresponds to IDD Field `dbmin50years`
+        """Corresponds to IDD Field `dbmin50years`
         50-year return period values for minimum extreme dry-bulb temperature
 
         Args:
@@ -3201,8 +3371,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmin50years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmin50years`".format(value)
+                )
 
         self._dbmin50years = value
 
@@ -3218,7 +3390,7 @@ class DesignCondition(object):
 
     @dbmax50years.setter
     def dbmax50years(self, value=None):
-        """  Corresponds to IDD Field `dbmax50years`
+        """Corresponds to IDD Field `dbmax50years`
         50-year return period values for maximum extreme dry-bulb temperature
 
         Args:
@@ -3234,8 +3406,10 @@ class DesignCondition(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `dbmax50years`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `dbmax50years`".format(value)
+                )
 
         self._dbmax50years = value
 
@@ -3248,7 +3422,7 @@ class DesignCondition(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -3343,8 +3517,8 @@ class DesignCondition(object):
 
 
 class DesignConditions(object):
-
     """Corresponds to EPW IDD object `DESIGN CONDITIONS`"""
+
     _internal_name = "DESIGN CONDITIONS"
     field_count = 1
 
@@ -3364,7 +3538,7 @@ class DesignConditions(object):
         i += 1
         for _ in range(count):
             obj = DesignCondition()
-            obj.read(vals[i:i + obj.field_count])
+            obj.read(vals[i : i + obj.field_count])
             self.add_design_condition(obj)
             i += obj.field_count
 
@@ -3396,7 +3570,7 @@ class DesignConditions(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -3426,8 +3600,8 @@ class DesignConditions(object):
 
 
 class TypicalOrExtremePeriod(object):
-
     """Corresponds to EPW IDD object `TYPICAL/EXTREME PERIOD`"""
+
     _internal_name = "TYPICAL/EXTREME PERIOD"
     field_count = 4
 
@@ -3495,11 +3669,14 @@ class TypicalOrExtremePeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `typical_or_extreme_period_name`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `typical_or_extreme_period_name`')
+                    "value {} need to be of type str "
+                    "for field `typical_or_extreme_period_name`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `typical_or_extreme_period_name`"
+                )
 
         self._typical_or_extreme_period_name = value
 
@@ -3531,11 +3708,14 @@ class TypicalOrExtremePeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `typical_or_extreme_period_type`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `typical_or_extreme_period_type`')
+                    "value {} need to be of type str "
+                    "for field `typical_or_extreme_period_type`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `typical_or_extreme_period_type`"
+                )
 
         self._typical_or_extreme_period_type = value
 
@@ -3566,11 +3746,14 @@ class TypicalOrExtremePeriod(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `period_start_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `period_start_day`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `period_start_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `period_start_day`"
+                )
 
         self._period_start_day = value
 
@@ -3601,11 +3784,14 @@ class TypicalOrExtremePeriod(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `period_end_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `period_end_day`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `period_end_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `period_end_day`"
+                )
 
         self._period_end_day = value
 
@@ -3618,7 +3804,7 @@ class TypicalOrExtremePeriod(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -3649,8 +3835,8 @@ class TypicalOrExtremePeriod(object):
 
 
 class TypicalOrExtremePeriods(object):
-
     """Corresponds to EPW IDD object `TYPICAL/EXTREME PERIODS`"""
+
     _internal_name = "TYPICAL/EXTREME PERIODS"
     field_count = 1
 
@@ -3671,7 +3857,7 @@ class TypicalOrExtremePeriods(object):
         i += 1
         for _ in range(count):
             obj = TypicalOrExtremePeriod()
-            obj.read(vals[i:i + obj.field_count])
+            obj.read(vals[i : i + obj.field_count])
             self.add_typical_or_extreme_period(obj)
             i += obj.field_count
 
@@ -3703,7 +3889,7 @@ class TypicalOrExtremePeriods(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -3733,8 +3919,8 @@ class TypicalOrExtremePeriods(object):
 
 
 class GroundTemperature(object):
-
     """Corresponds to EPW IDD object `GROUND TEMPERATURE`"""
+
     _internal_name = "GROUND TEMPERATURE"
     field_count = 16
 
@@ -3875,8 +4061,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `ground_temperature_depth`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `ground_temperature_depth`".format(value)
+                )
 
         self._ground_temperature_depth = value
 
@@ -3909,8 +4096,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_soil_conductivity`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_soil_conductivity`".format(value)
+                )
 
         self._depth_soil_conductivity = value
 
@@ -3943,8 +4131,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_soil_density`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_soil_density`".format(value)
+                )
 
         self._depth_soil_density = value
 
@@ -3977,8 +4166,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_soil_specific_heat`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_soil_specific_heat`".format(value)
+                )
 
         self._depth_soil_specific_heat = value
 
@@ -4011,8 +4201,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_january_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_january_average_ground_temperature`".format(value)
+                )
 
         self._depth_january_average_ground_temperature = value
 
@@ -4045,8 +4236,11 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_february_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_february_average_ground_temperature`".format(
+                        value
+                    )
+                )
 
         self._depth_february_average_ground_temperature = value
 
@@ -4079,8 +4273,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_march_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_march_average_ground_temperature`".format(value)
+                )
 
         self._depth_march_average_ground_temperature = value
 
@@ -4113,8 +4308,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_april_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_april_average_ground_temperature`".format(value)
+                )
 
         self._depth_april_average_ground_temperature = value
 
@@ -4147,8 +4343,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_may_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_may_average_ground_temperature`".format(value)
+                )
 
         self._depth_may_average_ground_temperature = value
 
@@ -4181,8 +4378,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_june_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_june_average_ground_temperature`".format(value)
+                )
 
         self._depth_june_average_ground_temperature = value
 
@@ -4215,8 +4413,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_july_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_july_average_ground_temperature`".format(value)
+                )
 
         self._depth_july_average_ground_temperature = value
 
@@ -4249,8 +4448,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_august_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_august_average_ground_temperature`".format(value)
+                )
 
         self._depth_august_average_ground_temperature = value
 
@@ -4284,8 +4484,11 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_september_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_september_average_ground_temperature`".format(
+                        value
+                    )
+                )
 
         self._depth_september_average_ground_temperature = value
 
@@ -4318,8 +4521,9 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_october_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_october_average_ground_temperature`".format(value)
+                )
 
         self._depth_october_average_ground_temperature = value
 
@@ -4352,8 +4556,11 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_november_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_november_average_ground_temperature`".format(
+                        value
+                    )
+                )
 
         self._depth_november_average_ground_temperature = value
 
@@ -4386,8 +4593,11 @@ class GroundTemperature(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `depth_december_average_ground_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `depth_december_average_ground_temperature`".format(
+                        value
+                    )
+                )
 
         self._depth_december_average_ground_temperature = value
 
@@ -4400,7 +4610,7 @@ class GroundTemperature(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -4425,25 +4635,17 @@ class GroundTemperature(object):
         out.append(self._to_str(self.depth_soil_density))
         out.append(self._to_str(self.depth_soil_specific_heat))
         out.append(self._to_str(self.depth_january_average_ground_temperature))
-        out.append(
-            self._to_str(
-                self.depth_february_average_ground_temperature))
+        out.append(self._to_str(self.depth_february_average_ground_temperature))
         out.append(self._to_str(self.depth_march_average_ground_temperature))
         out.append(self._to_str(self.depth_april_average_ground_temperature))
         out.append(self._to_str(self.depth_may_average_ground_temperature))
         out.append(self._to_str(self.depth_june_average_ground_temperature))
         out.append(self._to_str(self.depth_july_average_ground_temperature))
         out.append(self._to_str(self.depth_august_average_ground_temperature))
-        out.append(
-            self._to_str(
-                self.depth_september_average_ground_temperature))
+        out.append(self._to_str(self.depth_september_average_ground_temperature))
         out.append(self._to_str(self.depth_october_average_ground_temperature))
-        out.append(
-            self._to_str(
-                self.depth_november_average_ground_temperature))
-        out.append(
-            self._to_str(
-                self.depth_december_average_ground_temperature))
+        out.append(self._to_str(self.depth_november_average_ground_temperature))
+        out.append(self._to_str(self.depth_december_average_ground_temperature))
         return ",".join(out)
 
     def __str__(self):
@@ -4451,8 +4653,8 @@ class GroundTemperature(object):
 
 
 class GroundTemperatures(object):
-
     """Corresponds to EPW IDD object `GROUND TEMPERATURES`"""
+
     _internal_name = "GROUND TEMPERATURES"
     field_count = 1
 
@@ -4472,7 +4674,7 @@ class GroundTemperatures(object):
         i += 1
         for _ in range(count):
             obj = GroundTemperature()
-            obj.read(vals[i:i + obj.field_count])
+            obj.read(vals[i : i + obj.field_count])
             self.add_ground_temperature(obj)
             i += obj.field_count
 
@@ -4504,7 +4706,7 @@ class GroundTemperatures(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -4534,8 +4736,8 @@ class GroundTemperatures(object):
 
 
 class Holiday(object):
-
     """Corresponds to EPW IDD object `HOLIDAY`"""
+
     _internal_name = "HOLIDAY"
     field_count = 2
 
@@ -4590,11 +4792,14 @@ class Holiday(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `holiday_name`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `holiday_name`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `holiday_name`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `holiday_name`"
+                )
 
         self._holiday_name = value
 
@@ -4625,11 +4830,14 @@ class Holiday(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `holiday_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `holiday_day`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `holiday_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `holiday_day`"
+                )
 
         self._holiday_day = value
 
@@ -4642,7 +4850,7 @@ class Holiday(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -4671,8 +4879,8 @@ class Holiday(object):
 
 
 class HolidaysOrDaylightSavings(object):
-
     """Corresponds to EPW IDD object `HOLIDAYS/DAYLIGHT SAVINGS`"""
+
     _internal_name = "HOLIDAYS/DAYLIGHT SAVINGS"
     field_count = 4
 
@@ -4711,7 +4919,7 @@ class HolidaysOrDaylightSavings(object):
         i += 1
         for _ in range(count):
             obj = Holiday()
-            obj.read(vals[i:i + obj.field_count])
+            obj.read(vals[i : i + obj.field_count])
             self.add_holiday(obj)
             i += obj.field_count
 
@@ -4747,17 +4955,22 @@ class HolidaysOrDaylightSavings(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `leapyear_observed`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `leapyear_observed`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `leapyear_observed`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `leapyear_observed`"
+                )
             vals = set()
             vals.add("Yes")
             vals.add("No")
             if value not in vals:
-                raise ValueError('value {} is not an accepted value for '
-                                 'field `leapyear_observed`'.format(value))
+                raise ValueError(
+                    "value {} is not an accepted value for "
+                    "field `leapyear_observed`".format(value)
+                )
 
         self._leapyear_observed = value
 
@@ -4789,11 +5002,14 @@ class HolidaysOrDaylightSavings(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `daylight_saving_start_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `daylight_saving_start_day`')
+                    "value {} need to be of type str "
+                    "for field `daylight_saving_start_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `daylight_saving_start_day`"
+                )
 
         self._daylight_saving_start_day = value
 
@@ -4825,11 +5041,14 @@ class HolidaysOrDaylightSavings(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `daylight_saving_end_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `daylight_saving_end_day`')
+                    "value {} need to be of type str "
+                    "for field `daylight_saving_end_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `daylight_saving_end_day`"
+                )
 
         self._daylight_saving_end_day = value
 
@@ -4861,7 +5080,7 @@ class HolidaysOrDaylightSavings(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -4894,8 +5113,8 @@ class HolidaysOrDaylightSavings(object):
 
 
 class Comments1(object):
-
     """Corresponds to EPW IDD object `COMMENTS 1`"""
+
     _internal_name = "COMMENTS 1"
     field_count = 1
 
@@ -4944,11 +5163,14 @@ class Comments1(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `comments_1`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `comments_1`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `comments_1`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `comments_1`"
+                )
 
         self._comments_1 = value
 
@@ -4961,7 +5183,7 @@ class Comments1(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -4989,8 +5211,8 @@ class Comments1(object):
 
 
 class Comments2(object):
-
     """Corresponds to EPW IDD object `COMMENTS 2`"""
+
     _internal_name = "COMMENTS 2"
     field_count = 1
 
@@ -5039,11 +5261,14 @@ class Comments2(object):
             try:
                 value = str(value)
             except ValueError:
-                raise ValueError('value {} need to be of type str '
-                                 'for field `comments_2`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `comments_2`')
+                raise ValueError(
+                    "value {} need to be of type str "
+                    "for field `comments_2`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma " "for field `comments_2`"
+                )
 
         self._comments_2 = value
 
@@ -5056,7 +5281,7 @@ class Comments2(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -5084,8 +5309,8 @@ class Comments2(object):
 
 
 class DataPeriod(object):
-
     """Corresponds to EPW IDD object `DATA PERIOD`"""
+
     _internal_name = "DATA PERIODS"
     field_count = 6
 
@@ -5199,8 +5424,9 @@ class DataPeriod(object):
                 value = int(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type int '
-                    'for field `number_of_records_per_hour`'.format(value))
+                    "value {} need to be of type int "
+                    "for field `number_of_records_per_hour`".format(value)
+                )
 
         self._number_of_records_per_hour = value
 
@@ -5232,11 +5458,14 @@ class DataPeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `data_period_name_or_description`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `data_period_name_or_description`')
+                    "value {} need to be of type str "
+                    "for field `data_period_name_or_description`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `data_period_name_or_description`"
+                )
 
         self._data_period_name_or_description = value
 
@@ -5276,11 +5505,14 @@ class DataPeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `data_period_start_day_of_week`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `data_period_start_day_of_week`')
+                    "value {} need to be of type str "
+                    "for field `data_period_start_day_of_week`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `data_period_start_day_of_week`"
+                )
             vals = set()
             vals.add("Sunday")
             vals.add("Monday")
@@ -5291,8 +5523,9 @@ class DataPeriod(object):
             vals.add("Saturday")
             if value not in vals:
                 raise ValueError(
-                    'value {} is not an accepted value for '
-                    'field `data_period_start_day_of_week`'.format(value))
+                    "value {} is not an accepted value for "
+                    "field `data_period_start_day_of_week`".format(value)
+                )
 
         self._data_period_start_day_of_week = value
 
@@ -5324,11 +5557,14 @@ class DataPeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `data_period_start_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `data_period_start_day`')
+                    "value {} need to be of type str "
+                    "for field `data_period_start_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `data_period_start_day`"
+                )
 
         self._data_period_start_day = value
 
@@ -5360,11 +5596,14 @@ class DataPeriod(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `data_period_end_day`'.format(value))
-            if ',' in value:
-                raise ValueError('value should not contain a comma '
-                                 'for field `data_period_end_day`')
+                    "value {} need to be of type str "
+                    "for field `data_period_end_day`".format(value)
+                )
+            if "," in value:
+                raise ValueError(
+                    "value should not contain a comma "
+                    "for field `data_period_end_day`"
+                )
 
         self._data_period_end_day = value
 
@@ -5377,7 +5616,7 @@ class DataPeriod(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -5410,8 +5649,8 @@ class DataPeriod(object):
 
 
 class DataPeriods(object):
-
     """Corresponds to EPW IDD object `DATA PERIODS`"""
+
     _internal_name = "DATA PERIODS"
     field_count = 1
 
@@ -5431,7 +5670,7 @@ class DataPeriods(object):
         i += 1
         for _ in range(count):
             obj = DataPeriod()
-            obj.read(vals[i:i + obj.field_count])
+            obj.read(vals[i : i + obj.field_count])
             self.add_data_period(obj)
             i += obj.field_count
 
@@ -5463,7 +5702,7 @@ class DataPeriods(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -5493,8 +5732,8 @@ class DataPeriods(object):
 
 
 class WeatherData(object):
-
     """Corresponds to EPW IDD object `WEATHER DATA`"""
+
     _internal_name = "WEATHER DATA"
     field_count = 35
 
@@ -5747,8 +5986,9 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `year`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int " "for field `year`".format(value)
+                )
 
         self._year = value
 
@@ -5781,14 +6021,15 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `month`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int " "for field `month`".format(value)
+                )
             if value < 1:
-                raise ValueError('value need to be greater or equal 1 '
-                                 'for field `month`')
+                raise ValueError(
+                    "value need to be greater or equal 1 " "for field `month`"
+                )
             if value > 12:
-                raise ValueError('value need to be smaller 12 '
-                                 'for field `month`')
+                raise ValueError("value need to be smaller 12 " "for field `month`")
 
         self._month = value
 
@@ -5821,14 +6062,15 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `day`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int " "for field `day`".format(value)
+                )
             if value < 1:
-                raise ValueError('value need to be greater or equal 1 '
-                                 'for field `day`')
+                raise ValueError(
+                    "value need to be greater or equal 1 " "for field `day`"
+                )
             if value > 31:
-                raise ValueError('value need to be smaller 31 '
-                                 'for field `day`')
+                raise ValueError("value need to be smaller 31 " "for field `day`")
 
         self._day = value
 
@@ -5861,14 +6103,15 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `hour`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int " "for field `hour`".format(value)
+                )
             if value < 1:
-                raise ValueError('value need to be greater or equal 1 '
-                                 'for field `hour`')
+                raise ValueError(
+                    "value need to be greater or equal 1 " "for field `hour`"
+                )
             if value > 24:
-                raise ValueError('value need to be smaller 24 '
-                                 'for field `hour`')
+                raise ValueError("value need to be smaller 24 " "for field `hour`")
 
         self._hour = value
 
@@ -5901,14 +6144,16 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `minute`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int "
+                    "for field `minute`".format(value)
+                )
             if value < 0:
-                raise ValueError('value need to be greater or equal 0 '
-                                 'for field `minute`')
+                raise ValueError(
+                    "value need to be greater or equal 0 " "for field `minute`"
+                )
             if value > 60:
-                raise ValueError('value need to be smaller 60 '
-                                 'for field `minute`')
+                raise ValueError("value need to be smaller 60 " "for field `minute`")
 
         self._minute = value
 
@@ -5943,12 +6188,14 @@ class WeatherData(object):
                 value = str(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type str '
-                    'for field `data_source_and_uncertainty_flags`'.format(value))
-            if ',' in value:
+                    "value {} need to be of type str "
+                    "for field `data_source_and_uncertainty_flags`".format(value)
+                )
+            if "," in value:
                 raise ValueError(
-                    'value should not contain a comma '
-                    'for field `data_source_and_uncertainty_flags`')
+                    "value should not contain a comma "
+                    "for field `data_source_and_uncertainty_flags`"
+                )
 
         self._data_source_and_uncertainty_flags = value
 
@@ -5984,14 +6231,17 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `dry_bulb_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `dry_bulb_temperature`".format(value)
+                )
             if value <= -70.0:
-                raise ValueError('value need to be greater -70.0 '
-                                 'for field `dry_bulb_temperature`')
+                raise ValueError(
+                    "value need to be greater -70.0 " "for field `dry_bulb_temperature`"
+                )
             if value >= 70.0:
-                raise ValueError('value need to be smaller 70.0 '
-                                 'for field `dry_bulb_temperature`')
+                raise ValueError(
+                    "value need to be smaller 70.0 " "for field `dry_bulb_temperature`"
+                )
 
         self._dry_bulb_temperature = value
 
@@ -6027,14 +6277,18 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `dew_point_temperature`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `dew_point_temperature`".format(value)
+                )
             if value <= -70.0:
-                raise ValueError('value need to be greater -70.0 '
-                                 'for field `dew_point_temperature`')
+                raise ValueError(
+                    "value need to be greater -70.0 "
+                    "for field `dew_point_temperature`"
+                )
             if value >= 70.0:
-                raise ValueError('value need to be smaller 70.0 '
-                                 'for field `dew_point_temperature`')
+                raise ValueError(
+                    "value need to be smaller 70.0 " "for field `dew_point_temperature`"
+                )
 
         self._dew_point_temperature = value
 
@@ -6068,14 +6322,19 @@ class WeatherData(object):
             try:
                 value = int(value)
             except ValueError:
-                raise ValueError('value {} need to be of type int '
-                                 'for field `relative_humidity`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type int "
+                    "for field `relative_humidity`".format(value)
+                )
             if value < 0:
-                raise ValueError('value need to be greater or equal 0 '
-                                 'for field `relative_humidity`')
+                raise ValueError(
+                    "value need to be greater or equal 0 "
+                    "for field `relative_humidity`"
+                )
             if value > 110:
-                raise ValueError('value need to be smaller 110 '
-                                 'for field `relative_humidity`')
+                raise ValueError(
+                    "value need to be smaller 110 " "for field `relative_humidity`"
+                )
 
         self._relative_humidity = value
 
@@ -6111,14 +6370,19 @@ class WeatherData(object):
                 value = int(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type int '
-                    'for field `atmospheric_station_pressure`'.format(value))
+                    "value {} need to be of type int "
+                    "for field `atmospheric_station_pressure`".format(value)
+                )
             if value <= 31000:
-                raise ValueError('value need to be greater 31000 '
-                                 'for field `atmospheric_station_pressure`')
+                raise ValueError(
+                    "value need to be greater 31000 "
+                    "for field `atmospheric_station_pressure`"
+                )
             if value >= 120000:
-                raise ValueError('value need to be smaller 120000 '
-                                 'for field `atmospheric_station_pressure`')
+                raise ValueError(
+                    "value need to be smaller 120000 "
+                    "for field `atmospheric_station_pressure`"
+                )
 
         self._atmospheric_station_pressure = value
 
@@ -6153,12 +6417,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `extraterrestrial_horizontal_radiation`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `extraterrestrial_horizontal_radiation`".format(value)
+                )
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 '
-                    'for field `extraterrestrial_horizontal_radiation`')
+                    "value need to be greater or equal 0.0 "
+                    "for field `extraterrestrial_horizontal_radiation`"
+                )
 
         self._extraterrestrial_horizontal_radiation = value
 
@@ -6193,12 +6459,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `extraterrestrial_direct_normal_radiation`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `extraterrestrial_direct_normal_radiation`".format(value)
+                )
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 '
-                    'for field `extraterrestrial_direct_normal_radiation`')
+                    "value need to be greater or equal 0.0 "
+                    "for field `extraterrestrial_direct_normal_radiation`"
+                )
 
         self._extraterrestrial_direct_normal_radiation = value
 
@@ -6233,12 +6501,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `horizontal_infrared_radiation_intensity`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `horizontal_infrared_radiation_intensity`".format(value)
+                )
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 '
-                    'for field `horizontal_infrared_radiation_intensity`')
+                    "value need to be greater or equal 0.0 "
+                    "for field `horizontal_infrared_radiation_intensity`"
+                )
 
         self._horizontal_infrared_radiation_intensity = value
 
@@ -6273,11 +6543,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `global_horizontal_radiation`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `global_horizontal_radiation`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `global_horizontal_radiation`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `global_horizontal_radiation`"
+                )
 
         self._global_horizontal_radiation = value
 
@@ -6312,11 +6585,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `direct_normal_radiation`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `direct_normal_radiation`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `direct_normal_radiation`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `direct_normal_radiation`"
+                )
 
         self._direct_normal_radiation = value
 
@@ -6351,11 +6627,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `diffuse_horizontal_radiation`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `diffuse_horizontal_radiation`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `diffuse_horizontal_radiation`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `diffuse_horizontal_radiation`"
+                )
 
         self._diffuse_horizontal_radiation = value
 
@@ -6371,7 +6650,7 @@ class WeatherData(object):
 
     @global_horizontal_illuminance.setter
     def global_horizontal_illuminance(self, value=999999.0):
-        """  Corresponds to IDD Field `global_horizontal_illuminance`
+        """Corresponds to IDD Field `global_horizontal_illuminance`
         will be missing if >= 999900
 
         Args:
@@ -6390,11 +6669,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `global_horizontal_illuminance`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `global_horizontal_illuminance`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `global_horizontal_illuminance`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `global_horizontal_illuminance`"
+                )
 
         self._global_horizontal_illuminance = value
 
@@ -6410,7 +6692,7 @@ class WeatherData(object):
 
     @direct_normal_illuminance.setter
     def direct_normal_illuminance(self, value=999999.0):
-        """  Corresponds to IDD Field `direct_normal_illuminance`
+        """Corresponds to IDD Field `direct_normal_illuminance`
         will be missing if >= 999900
 
         Args:
@@ -6429,11 +6711,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `direct_normal_illuminance`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `direct_normal_illuminance`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `direct_normal_illuminance`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `direct_normal_illuminance`"
+                )
 
         self._direct_normal_illuminance = value
 
@@ -6449,7 +6734,7 @@ class WeatherData(object):
 
     @diffuse_horizontal_illuminance.setter
     def diffuse_horizontal_illuminance(self, value=999999.0):
-        """  Corresponds to IDD Field `diffuse_horizontal_illuminance`
+        """Corresponds to IDD Field `diffuse_horizontal_illuminance`
         will be missing if >= 999900
 
         Args:
@@ -6468,11 +6753,14 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `diffuse_horizontal_illuminance`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `diffuse_horizontal_illuminance`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `diffuse_horizontal_illuminance`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `diffuse_horizontal_illuminance`"
+                )
 
         self._diffuse_horizontal_illuminance = value
 
@@ -6488,7 +6776,7 @@ class WeatherData(object):
 
     @zenith_luminance.setter
     def zenith_luminance(self, value=9999.0):
-        """  Corresponds to IDD Field `zenith_luminance`
+        """Corresponds to IDD Field `zenith_luminance`
         will be missing if >= 9999
 
         Args:
@@ -6506,11 +6794,15 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `zenith_luminance`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `zenith_luminance`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `zenith_luminance`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `zenith_luminance`"
+                )
 
         self._zenith_luminance = value
 
@@ -6545,14 +6837,19 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wind_direction`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wind_direction`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `wind_direction`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `wind_direction`"
+                )
             if value > 360.0:
-                raise ValueError('value need to be smaller 360.0 '
-                                 'for field `wind_direction`')
+                raise ValueError(
+                    "value need to be smaller 360.0 " "for field `wind_direction`"
+                )
 
         self._wind_direction = value
 
@@ -6587,14 +6884,18 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `wind_speed`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `wind_speed`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `wind_speed`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 " "for field `wind_speed`"
+                )
             if value > 40.0:
-                raise ValueError('value need to be smaller 40.0 '
-                                 'for field `wind_speed`')
+                raise ValueError(
+                    "value need to be smaller 40.0 " "for field `wind_speed`"
+                )
 
         self._wind_speed = value
 
@@ -6631,14 +6932,19 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `total_sky_cover`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `total_sky_cover`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `total_sky_cover`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `total_sky_cover`"
+                )
             if value > 10.0:
-                raise ValueError('value need to be smaller 10.0 '
-                                 'for field `total_sky_cover`')
+                raise ValueError(
+                    "value need to be smaller 10.0 " "for field `total_sky_cover`"
+                )
 
         self._total_sky_cover = value
 
@@ -6678,14 +6984,19 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `opaque_sky_cover`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `opaque_sky_cover`".format(value)
+                )
             if value < 0.0:
-                raise ValueError('value need to be greater or equal 0.0 '
-                                 'for field `opaque_sky_cover`')
+                raise ValueError(
+                    "value need to be greater or equal 0.0 "
+                    "for field `opaque_sky_cover`"
+                )
             if value > 10.0:
-                raise ValueError('value need to be smaller 10.0 '
-                                 'for field `opaque_sky_cover`')
+                raise ValueError(
+                    "value need to be smaller 10.0 " "for field `opaque_sky_cover`"
+                )
 
         self._opaque_sky_cover = value
 
@@ -6719,8 +7030,10 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `visibility`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `visibility`".format(value)
+                )
 
         self._visibility = value
 
@@ -6756,8 +7069,10 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `ceiling_height`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `ceiling_height`".format(value)
+                )
 
         self._ceiling_height = value
 
@@ -6794,8 +7109,9 @@ class WeatherData(object):
                 value = int(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type int '
-                    'for field `present_weather_observation`'.format(value))
+                    "value {} need to be of type int "
+                    "for field `present_weather_observation`".format(value)
+                )
 
         self._present_weather_observation = value
 
@@ -6827,8 +7143,9 @@ class WeatherData(object):
                 value = int(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type int '
-                    'for field `present_weather_codes`'.format(value))
+                    "value {} need to be of type int "
+                    "for field `present_weather_codes`".format(value)
+                )
 
         self._present_weather_codes = value
 
@@ -6862,8 +7179,9 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `precipitable_water`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `precipitable_water`".format(value)
+                )
 
         self._precipitable_water = value
 
@@ -6897,8 +7215,9 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `aerosol_optical_depth`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `aerosol_optical_depth`".format(value)
+                )
 
         self._aerosol_optical_depth = value
 
@@ -6931,8 +7250,10 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `snow_depth`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `snow_depth`".format(value)
+                )
 
         self._snow_depth = value
 
@@ -6965,8 +7286,9 @@ class WeatherData(object):
                 value = int(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type int '
-                    'for field `days_since_last_snowfall`'.format(value))
+                    "value {} need to be of type int "
+                    "for field `days_since_last_snowfall`".format(value)
+                )
 
         self._days_since_last_snowfall = value
 
@@ -6998,8 +7320,10 @@ class WeatherData(object):
             try:
                 value = float(value)
             except ValueError:
-                raise ValueError('value {} need to be of type float '
-                                 'for field `albedo`'.format(value))
+                raise ValueError(
+                    "value {} need to be of type float "
+                    "for field `albedo`".format(value)
+                )
 
         self._albedo = value
 
@@ -7033,8 +7357,9 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `liquid_precipitation_depth`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `liquid_precipitation_depth`".format(value)
+                )
 
         self._liquid_precipitation_depth = value
 
@@ -7068,8 +7393,9 @@ class WeatherData(object):
                 value = float(value)
             except ValueError:
                 raise ValueError(
-                    'value {} need to be of type float '
-                    'for field `liquid_precipitation_quantity`'.format(value))
+                    "value {} need to be of type float "
+                    "for field `liquid_precipitation_quantity`".format(value)
+                )
 
         self._liquid_precipitation_quantity = value
 
@@ -7082,7 +7408,7 @@ class WeatherData(object):
 
         """
         if value is None:
-            return ''
+            return ""
         else:
             return str(value)
 
@@ -7144,20 +7470,20 @@ class WeatherData(object):
 
 
 class EPW(object):
-
     """Represens a EnergyPlus EPW weather data file."""
 
     def __init__(
-            self,
-            location=None,
-            design_conditions=None,
-            typical_or_extreme_periods=None,
-            ground_temperatures=None,
-            holidays_or_daylight_savings=None,
-            comments_1=None,
-            comments_2=None,
-            data_periods=None,
-            weatherdata=None):
+        self,
+        location=None,
+        design_conditions=None,
+        typical_or_extreme_periods=None,
+        ground_temperatures=None,
+        holidays_or_daylight_savings=None,
+        comments_1=None,
+        comments_2=None,
+        data_periods=None,
+        weatherdata=None,
+    ):
         """Inits EPW with no data dictionary set."""
         self._data = OrderedDict()
         self._data["LOCATION"] = location
@@ -7361,7 +7687,7 @@ class EPW(object):
 
         """
         if not isinstance(data, WeatherData):
-            raise ValueError('Weather data need to be of type WeatherData')
+            raise ValueError("Weather data need to be of type WeatherData")
         self._data["WEATHER DATA"].append(data)
 
     def save(self, path, check=True):
@@ -7371,59 +7697,66 @@ class EPW(object):
             path (str): path where EPW file should be saved
 
         """
-        with open(path, 'w') as f:
+        with open(path, "w") as f:
             if check:
-                if ("LOCATION" not in self._data or
-                        self._data["LOCATION"] is None):
-                    raise ValueError('location is not valid.')
-                if ("DESIGN CONDITIONS" not in self._data or
-                        self._data["DESIGN CONDITIONS"] is None):
-                    raise ValueError('design_conditions is not valid.')
-                if ("TYPICAL/EXTREME PERIODS" not in self._data or
-                        self._data["TYPICAL/EXTREME PERIODS"] is None):
-                    raise ValueError(
-                        'typical_or_extreme_periods is not valid.')
-                if ("GROUND TEMPERATURES" not in self._data or
-                        self._data["GROUND TEMPERATURES"] is None):
-                    raise ValueError('ground_temperatures is not valid.')
-                if ("HOLIDAYS/DAYLIGHT SAVINGS" not in self._data or
-                        self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is None):
-                    raise ValueError(
-                        'holidays_or_daylight_savings is not valid.')
-                if ("COMMENTS 1" not in self._data or
-                        self._data["COMMENTS 1"] is None):
-                    raise ValueError('comments_1 is not valid.')
-                if ("COMMENTS 2" not in self._data or
-                        self._data["COMMENTS 2"] is None):
-                    raise ValueError('comments_2 is not valid.')
-                if ("DATA PERIODS" not in self._data or
-                        self._data["DATA PERIODS"] is None):
-                    raise ValueError('data_periods is not valid.')
-            if ("LOCATION" in self._data and
-                    self._data["LOCATION"] is not None):
+                if "LOCATION" not in self._data or self._data["LOCATION"] is None:
+                    raise ValueError("location is not valid.")
+                if (
+                    "DESIGN CONDITIONS" not in self._data
+                    or self._data["DESIGN CONDITIONS"] is None
+                ):
+                    raise ValueError("design_conditions is not valid.")
+                if (
+                    "TYPICAL/EXTREME PERIODS" not in self._data
+                    or self._data["TYPICAL/EXTREME PERIODS"] is None
+                ):
+                    raise ValueError("typical_or_extreme_periods is not valid.")
+                if (
+                    "GROUND TEMPERATURES" not in self._data
+                    or self._data["GROUND TEMPERATURES"] is None
+                ):
+                    raise ValueError("ground_temperatures is not valid.")
+                if (
+                    "HOLIDAYS/DAYLIGHT SAVINGS" not in self._data
+                    or self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is None
+                ):
+                    raise ValueError("holidays_or_daylight_savings is not valid.")
+                if "COMMENTS 1" not in self._data or self._data["COMMENTS 1"] is None:
+                    raise ValueError("comments_1 is not valid.")
+                if "COMMENTS 2" not in self._data or self._data["COMMENTS 2"] is None:
+                    raise ValueError("comments_2 is not valid.")
+                if (
+                    "DATA PERIODS" not in self._data
+                    or self._data["DATA PERIODS"] is None
+                ):
+                    raise ValueError("data_periods is not valid.")
+            if "LOCATION" in self._data and self._data["LOCATION"] is not None:
                 f.write(self._data["LOCATION"].export() + "\n")
-            if ("DESIGN CONDITIONS" in self._data and
-                    self._data["DESIGN CONDITIONS"] is not None):
+            if (
+                "DESIGN CONDITIONS" in self._data
+                and self._data["DESIGN CONDITIONS"] is not None
+            ):
                 f.write(self._data["DESIGN CONDITIONS"].export() + "\n")
-            if ("TYPICAL/EXTREME PERIODS" in self._data and
-                    self._data["TYPICAL/EXTREME PERIODS"] is not None):
+            if (
+                "TYPICAL/EXTREME PERIODS" in self._data
+                and self._data["TYPICAL/EXTREME PERIODS"] is not None
+            ):
                 f.write(self._data["TYPICAL/EXTREME PERIODS"].export() + "\n")
-            if ("GROUND TEMPERATURES" in self._data and
-                    self._data["GROUND TEMPERATURES"] is not None):
+            if (
+                "GROUND TEMPERATURES" in self._data
+                and self._data["GROUND TEMPERATURES"] is not None
+            ):
                 f.write(self._data["GROUND TEMPERATURES"].export() + "\n")
-            if ("HOLIDAYS/DAYLIGHT SAVINGS" in self._data and
-                    self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is not None):
-                f.write(
-                    self._data["HOLIDAYS/DAYLIGHT SAVINGS"].export() +
-                    "\n")
-            if ("COMMENTS 1" in self._data and
-                    self._data["COMMENTS 1"] is not None):
+            if (
+                "HOLIDAYS/DAYLIGHT SAVINGS" in self._data
+                and self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is not None
+            ):
+                f.write(self._data["HOLIDAYS/DAYLIGHT SAVINGS"].export() + "\n")
+            if "COMMENTS 1" in self._data and self._data["COMMENTS 1"] is not None:
                 f.write(self._data["COMMENTS 1"].export() + "\n")
-            if ("COMMENTS 2" in self._data and
-                    self._data["COMMENTS 2"] is not None):
+            if "COMMENTS 2" in self._data and self._data["COMMENTS 2"] is not None:
                 f.write(self._data["COMMENTS 2"].export() + "\n")
-            if ("DATA PERIODS" in self._data and
-                    self._data["DATA PERIODS"] is not None):
+            if "DATA PERIODS" in self._data and self._data["DATA PERIODS"] is not None:
                 f.write(self._data["DATA PERIODS"].export() + "\n")
             for item in self._data["WEATHER DATA"]:
                 f.write(item.export(False) + "\n")
@@ -7455,8 +7788,7 @@ class EPW(object):
             return Comments2()
         if internal_name == "DATA PERIODS":
             return DataPeriods()
-        raise ValueError(
-            "No DataDictionary known for {}".format(internal_name))
+        raise ValueError("No DataDictionary known for {}".format(internal_name))
 
     def read(self, path):
         """Read EPW weather data from path.
@@ -7472,12 +7804,11 @@ class EPW(object):
                 if match_obj_name is not None:
                     internal_name = match_obj_name.group(1)
                     if internal_name in self._data:
-                        self._data[internal_name] = self._create_datadict(
-                            internal_name)
-                        data_line = line[len(internal_name) + 1:]
-                        vals = data_line.strip().split(',')
+                        self._data[internal_name] = self._create_datadict(internal_name)
+                        data_line = line[len(internal_name) + 1 :]
+                        vals = data_line.strip().split(",")
                         self._data[internal_name].read(vals)
                 else:
                     wd = WeatherData()
-                    wd.read(line.strip().split(','))
+                    wd.read(line.strip().split(","))
                     self.add_weatherdata(wd)
