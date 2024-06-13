@@ -6941,7 +6941,7 @@ class WeatherData(object):
                     "value need to be greater or equal 0.0 "
                     "for field `total_sky_cover`"
                 )
-            if value > 10.0:
+            if value > 10.0 and value < 99.0:
                 raise ValueError(
                     "value need to be smaller 10.0 " "for field `total_sky_cover`"
                 )
@@ -6993,7 +6993,7 @@ class WeatherData(object):
                     "value need to be greater or equal 0.0 "
                     "for field `opaque_sky_cover`"
                 )
-            if value > 10.0:
+            if value > 10.0 and value < 99.0:
                 raise ValueError(
                     "value need to be smaller 10.0 " "for field `opaque_sky_cover`"
                 )
