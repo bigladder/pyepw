@@ -6414,7 +6414,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
