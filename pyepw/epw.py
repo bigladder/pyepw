@@ -6426,7 +6426,7 @@ class WeatherData(object):
                     "for field `extraterrestrial_horizontal_radiation`"
                 )
 
-        self._extraterrestrial_horizontal_radiation = value
+        self._extraterrestrial_horizontal_radiation = int(value)
 
     @property
     def extraterrestrial_direct_normal_radiation(self):
