@@ -4198,7 +4198,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4233,7 +4233,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4270,7 +4270,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4305,7 +4305,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4340,7 +4340,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4375,7 +4375,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4410,7 +4410,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4445,7 +4445,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4481,7 +4481,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4518,7 +4518,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4553,7 +4553,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -4590,7 +4590,7 @@ class GroundTemperature(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.2f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6456,7 +6456,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6498,7 +6498,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6540,7 +6540,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6582,7 +6582,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6624,7 +6624,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6666,7 +6666,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6708,7 +6708,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6750,7 +6750,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6792,7 +6792,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6835,7 +6835,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6930,7 +6930,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -6982,7 +6982,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -7028,7 +7028,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -7067,7 +7067,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -7212,7 +7212,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.3f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -7318,7 +7318,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = f"{float(value):.3f}"
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
@@ -7390,7 +7390,7 @@ class WeatherData(object):
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except ValueError:
                 raise ValueError(
                     "value {} need to be of type float "
