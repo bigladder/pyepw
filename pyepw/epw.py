@@ -7787,7 +7787,7 @@ class EPW(object):
         if internal_name == "COMMENTS 2":
             return Comments2()
         if internal_name == "DATA PERIODS":
-            return DataPeriods()
+            return DataPeriod()
         raise ValueError("No DataDictionary known for {}".format(internal_name))
 
     def read(self, path):
