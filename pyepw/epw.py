@@ -6378,7 +6378,7 @@ class WeatherData(object):
                     "value need to be greater 31000 "
                     "for field `atmospheric_station_pressure`"
                 )
-            if value >= 120000:
+            if value >= 120000 and value != 999999:
                 raise ValueError(
                     "value need to be smaller 120000 "
                     "for field `atmospheric_station_pressure`"
